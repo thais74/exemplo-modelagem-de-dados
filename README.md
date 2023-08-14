@@ -21,3 +21,6 @@ Relacionamento do tipo **1 para n**, ou seja, **1 para  vários**
 
 ### n:m 
 Relacionamento do tipo **n para m**, ou seja, **vários para  vários**
+
+## Exercício resolvido:
+!["Modelagem Filmes e Gêneros"](exercicio01-uc8.mwb)
