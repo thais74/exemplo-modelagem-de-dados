@@ -12,6 +12,10 @@
 ### Fabricantes
 
 ```sql
-    INSERT INTO fabricantes (nome) VALUES()
+    INSERT INTO fabricantes (nome) VALUES('Asus'), ('Dell'), ('Apple');
+
+    INSERT INTO fabricantes (nome) VALUES('LG'), ('Samsumg'), ('Brastmep');
+
+    INSERT INTO fabricantes (nome) VALUES('Positivo'), ('Microsoft');
 
 ```
