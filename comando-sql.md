@@ -41,7 +41,7 @@ ALTER TABLE produtos
     -- CONSTRAINT/RESTRIÇÃO indicando o nome do relacionamento
     add CONSTRAINT fk_produtos_fabricantes
 
-    -- Criando a chave estrangeira (fabricante_id) que aponta para a chave primária (id) de outra tabla (fabricantes)
+    -- Criando a chave estrangeira (fabricante_id) que aponta para a chave primária (id) de outra tabela (fabricantes)
     FOREIGN KEY (fabricante_id) REFERENCES fabricantes(id);
 
 ```
@@ -79,5 +79,5 @@ ALTER TABLE fabricantes
 ```sql
 ALTER TABLE produtos
     ADD quantidades INT NULL AFTER preco;
-    
+
 ```
