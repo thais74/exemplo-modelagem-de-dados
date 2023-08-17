@@ -172,3 +172,10 @@ SELECT nome, preco FROM produtos ORDER BY preco DESC;
 -- DESC: classificação em ordem decrescente
 -- ASC (padrão): classificação em ordem crescente
 ```
+
+### Busca de dados
+```sql
+SELECT nome, descricao FROM produtos WHERE descricao LIKE '%tablet';
+-- Usamos o operador LIKE e o caractere coringa % para permitir 
+-- uma busca da palavra indicada em qualquer posição da palavra indicada em qualquer posição dentro do texto. Neste contexto, o % significa 'qualquer texto' antes ou depois da palavra
+```
