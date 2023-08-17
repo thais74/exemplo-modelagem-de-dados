@@ -108,3 +108,67 @@ SELECT nome, preco FROM produtos WHERE preco >= 2000 AND preco <= 6000;
 --A query abaixo não retorna registro já que as condições não foram atendidas
 SELECT nome, preco FROM produtos WHERE preco > 5000 AND preco <= 6000;
 ```
+
+
+#### OU
+```sql
+SELECT nome, preco FROM produtos WHERE preco > 5000 OR preco <= 3000;
+
+-- Exiba nome, preco somente dos produtos da Apple e da Samsung
+
+SELECT nome, preco FROM produtos WHERE fabricante_id = 5 OR fabricante_id = 2;
+
+-- Versão usando função  IN()
+SELECT nome, preco FROM produtos WHERE fabricante_id IN(3, 5);
+
+
+-- Versão usando função NOT IN()
+SELECT nome, preco FROM produtos WHERE fabricante_id NOT IN(3, 5);
+```
+
+
+#### NÃO
+```sql
+SELECT nome, descricao, preco FROM produtos WHERE NOT fabricante_id = 8;
+
+-- Versão usando operador relacional "diferença/diferente"
+SELECT nome, descricao, preco FROM produtos WHERE fabricante_id != 8;
+```
+
+## UPDATE
+
+```sql
+UPDATE fabricantes SET nome = 'Asus do Brasil' WHERE id = 1; -- NÃO SE ESQUECE DO WHERE!!
+
+UPDATE produtos SET preco = 6579.74 WHERE id = 4;
+
+
+-- Altere a quantidade dos produtos da Apple e da Samsung para 20
+
+UPDATE produtos SET quantidade = 20 WHERE fabricante_id IN(3, 5);
+
+```
+
+--- 
+## DELETE
+
+```sql
+DELETE FROM fabricantes WHERE id = 1;
+DELETE FROM fabricantes WHERE id = 4;
+
+
+-- A query abaixo não funcionará devido á restrição de chave estrangeira/relacionamento,
+-- ou seja, existem produtos associados ao fabricante 3 (apple)
+-- DELETE FROM fabricantes WHERE id = 3;
+```
+
+## SELECT: outras formas de uso
+
+```sql
+SELECT nome, preco FROM produtos ORDER BY nome;
+SELECT nome, preco FROM produtos ORDER BY preco;
+SELECT nome, preco FROM produtos ORDER BY preco DESC;
+
+-- DESC: classificação em ordem decrescente
+-- ASC (padrão): classificação em ordem crescente
+```
