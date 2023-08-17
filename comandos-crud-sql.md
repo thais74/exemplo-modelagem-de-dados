@@ -41,7 +41,7 @@ VALUES (
 );
 
 INSERT INTO produtos(nome, descricao, preco, quantidade, fabricante_id) VALUES (
-    'Geladeira'
+    'Geladeira',
     'Refrigerador frost-free com acesso á Internet.',
     5000,
     12,
@@ -59,4 +59,52 @@ INSERT INTO produtos(nome, descricao, preco, quantidade, fabricante_id) VALUES (
     8,
     2
 );
+```
+
+
+---
+### Exercício
+```sql 
+INSERT INTO produtos(nome, descricao, preco, quantidade, fabricante_id) VALUES (
+    'Xbox Series S',
+    'Velocidade e desempenho de última geração.',
+    1997,
+    5,
+    8
+), (
+    'Notebook Motion',
+    ' Intel Dual Core 4GB de RAM, 128GB SSD e Tela 14,1 polegadas.',
+    1213.65,
+    8,
+    7
+);
+```
+
+
+---
+## Select
+
+```sql
+SELECT * FROM produtos;
+
+SELECT nome, preco FROM produtos;
+
+SELECT preco, nome FROM produtos;
+
+SELECT nome, preco, quantidade FROM produtos WHERE preco < 5000>;
+
+-- Mostre nome e descrição somente dos produtos da Apple
+
+SELECT nome, preco, fabricante_id FROM produtos WHERE fabricante_id = 2 ;
+```
+
+
+---
+### Operadores Lógicos: E, OU, NÃO
+
+```sql
+SELECT nome, preco FROM produtos WHERE preco >= 2000 AND preco <= 6000;
+
+--A query abaixo não retorna registro já que as condições não foram atendidas
+SELECT nome, preco FROM produtos WHERE preco > 5000 AND preco <= 6000;
 ```
