@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Ago-2023 às 16:59
+-- Tempo de geração: 17-Ago-2023 às 16:53
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -42,10 +42,12 @@ CREATE TABLE `produtos` (
 
 INSERT INTO `produtos` (`id`, `nome`, `descricao`, `quantidade`, `preco`, `fabricante_id`) VALUES
 (1, 'Ultrabook', 'Equipamento de Última geração cheio de recursos, com processador Intel Core i9 do balacobaco.', 7, 3500.00, 2),
-(2, 'Tablet Android', 'Tablet com a versão 14 do sistema operacional Android.', 5, 1500.99, 5),
+(2, 'Tablet Android', 'Tablet com a versão 14 do sistema operacional Android.', 20, 1500.99, 2),
 (3, 'Geladeira', 'Refrigerador frost-free com acesso á Internet.', 12, 5000.00, 6),
-(4, 'iPhone 18 Pro Max', 'Smartphone Apple cheio das frescuras e caro pra caramba', 3, 9999.99, 2),
-(5, 'iPad Mini', 'Tablet Apple', 8, 4999.99, 2);
+(4, 'iPhone 18 Pro Max', 'Smartphone Apple cheio das frescuras e caro pra caramba', 20, 6579.74, 3),
+(5, 'iPad Mini', 'Tablet Apple', 20, 4999.99, 3),
+(6, 'Xbox Series S', 'Velocidade e desempenho de última geração.', 5, 1997.00, 8),
+(7, 'Notebook Motion', ' Intel Dual Core 4GB de RAM, 128GB SSD e Tela 14,1 polegadas.', 8, 1213.65, 7);
 
 --
 -- Índices para tabelas despejadas
@@ -66,7 +68,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para despejos de tabelas

@@ -207,7 +207,50 @@ SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos
 ### Segmentação/Agrupamento de resultados
 
 ```sql
-
 SELECT fabricante_id, SUM(preco) FROM produtos GROUP BY fabricante_id;
 
 ```
+
+---
+
+## Consultas (Queries) em duas ou mais tabelas relacionadas (JUNÇÃO/JOIN) 
+```sql
+-- SELECT tabela.coluna, tabela.coluna
+SELECT produtos.nome, as Produto, fabricantes.nome as Fabricante
+
+-- INNER JOIN é o comando que permite JUNTAR as tabelas
+FROM produtos INNER JOIN fabricantes 
+
+-- ON comando para indicar a forma/critério da junção
+ON produtos.fabricante_id =  fabricantes.id;
+
+
+SELECT produtos.nome as Produto, fabricantes.nome as Fabricante FROM produtos INNER JOIN fabricantes ON produtos.fabricante_id =  fabricantes.id;
+
+```
+
+### Nome do produto, nome do fabricante, ordenados pelo nome do produto
+
+```sql
+SELECT 
+    produtos.nome as Produto, 
+    produtos.preco as "Preço",
+    fabricantes.nome as Fabricante
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+ORDER BY Produto; -- ou produtos.nome
+```
+
+### Fabricante, soma dos preços e quantidade de produtos
+```sql
+SELECT
+    fabricantes.nome as Fabricante,
+    SUM(produtos.preco) as Total,
+    COUNT(produtos.fabricante_id) as "Qtd de Produtos"
+FROM produtos INNER JOIN  fabricantes
+ON produtos.fabricante_id =  fabricantes.id
+GROUP BY Fabricante;
+ORDER BY Total;
+```
+
+
